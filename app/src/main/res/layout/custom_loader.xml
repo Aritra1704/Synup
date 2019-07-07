@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/m_250"
+    android:layout_height="@dimen/m_150"
+    android:background="@drawable/custom_loader_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvLoadHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/m_10"
+        android:layout_marginRight="@dimen/m_10"
+        android:layout_marginTop="@dimen/m_10"
+        android:gravity="center_horizontal"
+        android:text="@string/loading"
+        android:textSize="@dimen/t_20" />
+
+    <TextView
+        android:id="@+id/tvLoadMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/m_10"
+        android:layout_marginRight="@dimen/m_10"
+        android:layout_marginTop="@dimen/m_10"
+        android:gravity="center_horizontal"
+        android:text="@string/loading"
+        android:textSize="@dimen/t_16" />
+
+    <FrameLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/colorTransparent"
+        android:gravity="center"
+        android:padding="@dimen/m_10">
+
+        <ProgressBar
+            android:id="@+id/cpbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+</LinearLayout>

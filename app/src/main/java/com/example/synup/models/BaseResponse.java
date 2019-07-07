@@ -2,11 +2,13 @@ package com.example.synup.models;
 
 import com.google.gson.JsonObject;
 
+import org.json.JSONObject;
+
 public class BaseResponse {
 
     JsonObject variants;
 
-    public Object getResponse() {
+    public JsonObject getResponse() {
         return variants;
     }
 

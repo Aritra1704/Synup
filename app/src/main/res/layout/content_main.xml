@@ -5,26 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".ui.CreateActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPizza"
+        android:id="@+id/rvVariants"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/variant_parent_item">
 
-    <TextView
-        android:id="@+id/tvNoData"
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No data"
+        android:layout_marginLeft="@dimen/m_20"
+        android:layout_marginBottom="@dimen/m_20"
+        android:padding="@dimen/m_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/t_18"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="@dimen/m_140"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/m_20"
+        android:background="@drawable/cd_circularedge_b"
+        android:padding="@dimen/m_10"
+        android:text="Create"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/t_20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

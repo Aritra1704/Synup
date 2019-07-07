@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvCrust"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/m_8"
+    android:layout_marginTop="@dimen/m_10"
+    android:elevation="@dimen/m_5"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvVariantName"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="@dimen/m_20">
+
+        <TextView
+            android:id="@+id/tvVariantHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_crust"
+            android:textSize="@dimen/t_20"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvVariantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/m_20"
+            android:onClick="onCrustChange"
+            android:hint="Select"
+            android:textSize="@dimen/t_18"
+            android:textStyle="italic" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

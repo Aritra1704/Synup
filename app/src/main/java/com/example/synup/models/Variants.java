@@ -10,7 +10,7 @@ public class Variants {
     ArrayList<VariantGroups> arrVariantGroups = new ArrayList<>();
 
     @SerializedName("exclude_list")
-    ArrayList<ExcludeItems> arrExclude = new ArrayList<>();
+    ArrayList<ArrayList<ExcludeItems>> arrExclude = new ArrayList<>();
 
     public ArrayList<VariantGroups> getArrVariantGroups() {
         return arrVariantGroups;
@@ -20,11 +20,11 @@ public class Variants {
         this.arrVariantGroups = arrVariantGroups;
     }
 
-    public ArrayList<ExcludeItems> getArrExclude() {
+    public ArrayList<ArrayList<ExcludeItems>> getArrExclude() {
         return arrExclude;
     }
 
-    public void setArrExclude(ArrayList<ExcludeItems> arrExclude) {
+    public void setArrExclude(ArrayList<ArrayList<ExcludeItems>> arrExclude) {
         this.arrExclude = arrExclude;
     }
 
