@@ -61,7 +61,6 @@ public class VariantRepo {
                             ArrayList<ArrayList<ExcludeItems>> arrVariantGroups = new Gson().fromJson(joResponse.getJSONArray("exclude_list").toString(), new TypeToken<List<List<ExcludeItems>>>(){}.getType());
                             variants.setArrExclude(arrVariantGroups);
                         }
-//                    Variants variants = new Gson().fromJson(response.body().getResponse().toString(), new TypeToken<Variants>(){}.getType());
                         variantData.setValue(variants);
                     }
 

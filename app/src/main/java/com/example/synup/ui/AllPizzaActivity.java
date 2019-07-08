@@ -62,6 +62,7 @@ public class AllPizzaActivity extends BaseActivity {
 
             if(listPizza != null && listPizza.size() > 0) {
                 adapter.refresh(listPizza);
+                showNoPizza(false);
             }
         });
 

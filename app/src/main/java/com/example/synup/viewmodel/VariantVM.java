@@ -24,6 +24,8 @@ public class VariantVM extends ViewModel {
     private VariantRepo mRepository;
     private LiveData<Variants> variantsLiveData;
 
+    public VariantVM() {}
+
     public void init() {
         if(variantsLiveData != null)
             return;
@@ -59,7 +61,7 @@ public class VariantVM extends ViewModel {
                     doesMatch[j] = true;
                 }
             }
-            isExcluded = areAllTrue(doesMatch);//Arrays.asList(doesMatch).contains(false);
+            isExcluded = areAllTrue(doesMatch);
             if(isExcluded)
                 break;
         }
