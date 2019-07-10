@@ -2,6 +2,7 @@ package com.example.synup.ui;
 
 import android.os.Bundle;
 
+import com.arpaul.utilitieslib.NetworkUtility;
 import com.arpaul.utilitieslib.StringUtils;
 import com.example.synup.R;
 import com.example.synup.models.ExcludeItems;
@@ -24,6 +25,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,17 +66,24 @@ public class CreateActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
 
+
+        if(!NetworkUtility.isConnectionAvailable(this)) {
+            Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
+            finish();
+        }
         variantVM = ViewModelProviders.of(this).get(VariantVM.class);
         variantVM.init();
         pizzaVM = ViewModelProviders.of(this).get(PizzaVM.class);
         pizzaVM.getInstance();
         variantVM.getVariants().observe(this, variants -> {
-            listVariants = variants.getArrVariantGroups();
-            listExclude = variants.getArrExclude();
-            Log.d("getVariants", listVariants.size() + "");
+            if(variants != null) {
+                listVariants = variants.getArrVariantGroups();
+                listExclude = variants.getArrExclude();
+                Log.d("getVariants", listVariants.size() + "");
 
-            if(listVariants != null && listVariants.size() > 0) {
-                adapter.refresh(listVariants);
+                if(listVariants != null && listVariants.size() > 0) {
+                    adapter.refresh(listVariants);
+                }
             }
         });
 
@@ -90,7 +99,7 @@ public class CreateActivity extends BaseActivity {
                 else {
                     selectedCombination.clear();
 
-                    for (String variant: hashgroupId.keySet()) {
+                    for (String variant: hashgroupId.keySet()) {//G1V11     G2V20   G3V30
                         selectedCombination.add(variantVM.getFormattedVariant(hashgroupId.get(variant) , StringUtils.getInt(hashSelected.get(variant).getId())));
                     }
 
